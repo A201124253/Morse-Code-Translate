@@ -54,8 +54,10 @@ if __name__ == "__main__":
 # def main():
 	inhalt = input("please write your words:\n")
 	if (inhalt[0]=='.' or inhalt[0]=='-'):
+		print('The words is: ')
 		print(decode(inhalt))
 	else:
+		print('The Morse code is: ')
 		print(encode(inhalt))
 
 

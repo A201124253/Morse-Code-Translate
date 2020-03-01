@@ -17,7 +17,7 @@ class Morse_code_translate():
 	# 编码函数
 	def encode(self):
 		# 循环每个字母找到对应的点
-		message = self.inhalt.lower()
+		message = self.inhalt.strip().lower()
 		mes = ''
 		for l in message:
 			# 不等于空格的时候进行翻译
@@ -33,7 +33,9 @@ class Morse_code_translate():
 		# 循环每条编码得到字母
 		# m = '['+message+']'
 		# print(m)
-		m1 = self.inhalt.replace('   ','_')
+		m0 = self.inhalt.strip()
+		print(m0)
+		m1 = m0.replace('   ','_')
 		# print('m1={}'.format(m1))
 		m2 = m1.replace(' ', "','")
 		# print('m2={}'.format(m2))
@@ -56,13 +58,18 @@ class Morse_code_translate():
 	
 if __name__ == "__main__":
 # def main():
-	inhalt = input("please write your words:\n")
-	mst = Morse_code_translate(inhalt)
-	if (inhalt[0]=='.' or inhalt[0]=='-'):
-		print('The words is: ')
-		print(mst.decode())
-	else:
-		print('The Morse code is: ')
-		print(mst.encode())
+	while True:
+		fun = input("please choose the function\n 1->translate 2->exit\n")
+		if fun=='2':
+			break
+		elif fun=='1':
+			inhalt = input("please write your words:\n")
+			mst = Morse_code_translate(inhalt)
+			if (inhalt[0]=='.' or inhalt[0]=='-'):
+				print('The words is: ')
+				print(mst.decode())
+			else:
+				print('The Morse code is: ')
+				print(mst.encode())
 
 

@@ -34,7 +34,7 @@ class Morse_code_translate():
 		# m = '['+message+']'
 		# print(m)
 		m0 = self.inhalt.strip()
-		print(m0)
+		# print(m0)
 		m1 = m0.replace('   ','_')
 		# print('m1={}'.format(m1))
 		m2 = m1.replace(' ', "','")
